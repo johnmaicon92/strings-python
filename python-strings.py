@@ -105,3 +105,35 @@ add_review(reviews)
 for review in reviews:
     print("Summary:", create_summary(review))
     print()
+
+
+
+
+
+"""
+    Question 2. User Input Data Processor
+Objective: The aim of this assignment is to process and format user input data.
+
+Task 1: Input Length Validator Write a script that asks for and checks the length of the user's first name and last name. Both should be at least 2 characters long. If not, print an error message.
+
+NOTE: Ensure that all code in your file is ready to run. This means that if someone opens your file and clicks the run button at the top, all code executes as intended. For example, if there are if statements, print statements, or for loops, they should function correctly and display output in the console as expected. If you have a function, make sure the function is called and runs.
+"""
+
+def user_name_validator():
+    while True:
+        first_name = input("What's your first name? ")
+        last_name = input("What's your last name? ")
+        if len(first_name) <2 or len(last_name) < 2:
+            print("Error: First and last name must be at least 2 characters long. Let's try again.")
+            continue
+        else:
+            confirm = input(f"Do you want to confirm '{str.capitalize(first_name)} {str.capitalize(last_name)}' as your first and last name? (yes/no) ")
+            if confirm == 'yes':
+                print("First and last name are valid.")
+                print(f"Hello, {str.capitalize(first_name)} {str.capitalize(last_name)}!")
+                break
+            else:
+                print("Please enter your first and last name again.")
+            
+
+user_name_validator()
